@@ -28,7 +28,7 @@ console.log(authStore.isAuth)
             <v-btn @click="authStore.logout" class="font-weight-bold">Cerrar Sesion</v-btn>
           </div>
           <div v-else>
-            <v-btn class="font-weight-bold" :to="{ name: 'home', replace: true }">Inicio</v-btn>
+            <v-btn v-if="route.name!=='home'" class="font-weight-bold" :to="{ name: 'home', replace: true }">Inicio</v-btn>
             <v-btn
               v-if="route.name !== 'login'"
               class="font-weight-bold"
